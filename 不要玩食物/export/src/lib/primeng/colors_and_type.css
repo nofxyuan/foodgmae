@@ -1,0 +1,430 @@
+/* =========================================================================
+   PrimeNG Design System — Colors & Type
+   Source: Aura preset (default), https://primeng.org/theming
+   Architecture: primitive → semantic → component (3-tier design tokens)
+   CSS variable prefix: --p-* (matches PrimeNG runtime output)
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
+@import url("./assets/primeicons.css");
+
+/* ---------------------------------------------------------------------------
+   1. PRIMITIVE TOKENS — raw color palettes (no context)
+   These match Aura's primitive scales. Tailwind-style 50→950.
+   --------------------------------------------------------------------------- */
+:root {
+  /* Emerald — DEFAULT primary accent in Aura */
+  --p-emerald-50:  #ecfdf5;
+  --p-emerald-100: #d1fae5;
+  --p-emerald-200: #a7f3d0;
+  --p-emerald-300: #6ee7b7;
+  --p-emerald-400: #34d399;
+  --p-emerald-500: #10b981;
+  --p-emerald-600: #059669;
+  --p-emerald-700: #047857;
+  --p-emerald-800: #065f46;
+  --p-emerald-900: #064e3b;
+  --p-emerald-950: #022c22;
+
+  /* Indigo — common alt primary, used in Lara theme */
+  --p-indigo-50:  #eef2ff;
+  --p-indigo-100: #e0e7ff;
+  --p-indigo-200: #c7d2fe;
+  --p-indigo-300: #a5b4fc;
+  --p-indigo-400: #818cf8;
+  --p-indigo-500: #6366f1;
+  --p-indigo-600: #4f46e5;
+  --p-indigo-700: #4338ca;
+  --p-indigo-800: #3730a3;
+  --p-indigo-900: #312e81;
+  --p-indigo-950: #1e1b4b;
+
+  /* Blue */
+  --p-blue-50:  #eff6ff;
+  --p-blue-100: #dbeafe;
+  --p-blue-200: #bfdbfe;
+  --p-blue-300: #93c5fd;
+  --p-blue-400: #60a5fa;
+  --p-blue-500: #3b82f6;
+  --p-blue-600: #2563eb;
+  --p-blue-700: #1d4ed8;
+  --p-blue-800: #1e40af;
+  --p-blue-900: #1e3a8a;
+  --p-blue-950: #172554;
+
+  /* Red */
+  --p-red-50:  #fef2f2;
+  --p-red-100: #fee2e2;
+  --p-red-200: #fecaca;
+  --p-red-300: #fca5a5;
+  --p-red-400: #f87171;
+  --p-red-500: #ef4444;
+  --p-red-600: #dc2626;
+  --p-red-700: #b91c1c;
+  --p-red-800: #991b1b;
+  --p-red-900: #7f1d1d;
+  --p-red-950: #450a0a;
+
+  /* Amber */
+  --p-amber-50:  #fffbeb;
+  --p-amber-100: #fef3c7;
+  --p-amber-200: #fde68a;
+  --p-amber-300: #fcd34d;
+  --p-amber-400: #fbbf24;
+  --p-amber-500: #f59e0b;
+  --p-amber-600: #d97706;
+  --p-amber-700: #b45309;
+  --p-amber-800: #92400e;
+  --p-amber-900: #78350f;
+  --p-amber-950: #451a03;
+
+  /* Sky (info) */
+  --p-sky-50:  #f0f9ff;
+  --p-sky-100: #e0f2fe;
+  --p-sky-200: #bae6fd;
+  --p-sky-300: #7dd3fc;
+  --p-sky-400: #38bdf8;
+  --p-sky-500: #0ea5e9;
+  --p-sky-600: #0284c7;
+  --p-sky-700: #0369a1;
+  --p-sky-800: #075985;
+  --p-sky-900: #0c4a6e;
+  --p-sky-950: #082f49;
+
+  /* Zinc — Aura's default surface palette in light mode */
+  --p-zinc-0:   #ffffff;
+  --p-zinc-50:  #fafafa;
+  --p-zinc-100: #f4f4f5;
+  --p-zinc-200: #e4e4e7;
+  --p-zinc-300: #d4d4d8;
+  --p-zinc-400: #a1a1aa;
+  --p-zinc-500: #71717a;
+  --p-zinc-600: #52525b;
+  --p-zinc-700: #3f3f46;
+  --p-zinc-800: #27272a;
+  --p-zinc-900: #18181b;
+  --p-zinc-950: #09090b;
+
+  /* Slate — alt surface, used by Nora */
+  --p-slate-50:  #f8fafc;
+  --p-slate-100: #f1f5f9;
+  --p-slate-200: #e2e8f0;
+  --p-slate-300: #cbd5e1;
+  --p-slate-400: #94a3b8;
+  --p-slate-500: #64748b;
+  --p-slate-600: #475569;
+  --p-slate-700: #334155;
+  --p-slate-800: #1e293b;
+  --p-slate-900: #0f172a;
+  --p-slate-950: #020617;
+}
+
+/* ---------------------------------------------------------------------------
+   2. SEMANTIC TOKENS — light mode (default)
+   Maps primitive → meaning. This is the layer most apps consume.
+   --------------------------------------------------------------------------- */
+:root,
+:root.p-light {
+  color-scheme: light;
+
+  /* Primary — pulls from emerald in Aura's default */
+  --p-primary-50:  var(--p-emerald-50);
+  --p-primary-100: var(--p-emerald-100);
+  --p-primary-200: var(--p-emerald-200);
+  --p-primary-300: var(--p-emerald-300);
+  --p-primary-400: var(--p-emerald-400);
+  --p-primary-500: var(--p-emerald-500);
+  --p-primary-600: var(--p-emerald-600);
+  --p-primary-700: var(--p-emerald-700);
+  --p-primary-800: var(--p-emerald-800);
+  --p-primary-900: var(--p-emerald-900);
+  --p-primary-950: var(--p-emerald-950);
+
+  --p-primary-color:         var(--p-primary-500);
+  --p-primary-contrast-color: #ffffff;
+  --p-primary-hover-color:   var(--p-primary-600);
+  --p-primary-active-color:  var(--p-primary-700);
+
+  /* Surface — neutral scaffolding (zinc in Aura light) */
+  --p-surface-0:   var(--p-zinc-0);
+  --p-surface-50:  var(--p-zinc-50);
+  --p-surface-100: var(--p-zinc-100);
+  --p-surface-200: var(--p-zinc-200);
+  --p-surface-300: var(--p-zinc-300);
+  --p-surface-400: var(--p-zinc-400);
+  --p-surface-500: var(--p-zinc-500);
+  --p-surface-600: var(--p-zinc-600);
+  --p-surface-700: var(--p-zinc-700);
+  --p-surface-800: var(--p-zinc-800);
+  --p-surface-900: var(--p-zinc-900);
+  --p-surface-950: var(--p-zinc-950);
+
+  /* Foreground / text */
+  --p-text-color:           var(--p-surface-700);  /* body text */
+  --p-text-hover-color:     var(--p-surface-800);
+  --p-text-muted-color:     var(--p-surface-500);
+  --p-text-muted-hover-color: var(--p-surface-600);
+
+  /* Backgrounds & content */
+  --p-content-background:        var(--p-surface-0);
+  --p-content-hover-background:  var(--p-surface-100);
+  --p-content-border-color:      var(--p-surface-200);
+  --p-content-color:             var(--p-text-color);
+
+  /* Highlight (selection / active row) */
+  --p-highlight-background:        color-mix(in srgb, var(--p-primary-400) 16%, transparent);
+  --p-highlight-focus-background:  color-mix(in srgb, var(--p-primary-400) 24%, transparent);
+  --p-highlight-color:             var(--p-primary-700);
+  --p-highlight-focus-color:       var(--p-primary-800);
+
+  /* Form fields */
+  --p-form-field-background:           var(--p-surface-0);
+  --p-form-field-disabled-background:  var(--p-surface-200);
+  --p-form-field-filled-background:    var(--p-surface-50);
+  --p-form-field-border-color:         var(--p-surface-300);
+  --p-form-field-hover-border-color:   var(--p-surface-400);
+  --p-form-field-focus-border-color:   var(--p-primary-500);
+  --p-form-field-invalid-border-color: var(--p-red-400);
+  --p-form-field-color:                var(--p-text-color);
+  --p-form-field-placeholder-color:    var(--p-surface-500);
+
+  /* Focus ring */
+  --p-focus-ring-width:  2px;
+  --p-focus-ring-style:  solid;
+  --p-focus-ring-color:  var(--p-primary-500);
+  --p-focus-ring-offset: 2px;
+  --p-focus-ring-shadow: none;
+
+  /* Semantic state colors */
+  --p-success-color:  var(--p-emerald-500);
+  --p-info-color:     var(--p-sky-500);
+  --p-warn-color:     var(--p-amber-500);
+  --p-danger-color:   var(--p-red-500);
+  --p-help-color:     #a855f7; /* purple-500 */
+  --p-secondary-color: var(--p-surface-500);
+}
+
+/* ---------------------------------------------------------------------------
+   3. DARK MODE — toggle via `.p-dark` class on <html> or system pref
+   --------------------------------------------------------------------------- */
+:root.p-dark {
+  color-scheme: dark;
+
+  --p-primary-color:          var(--p-primary-400);
+  --p-primary-contrast-color: var(--p-primary-950);
+  --p-primary-hover-color:    var(--p-primary-300);
+  --p-primary-active-color:   var(--p-primary-200);
+
+  /* Surface inverted */
+  --p-surface-0:   var(--p-zinc-950);
+  --p-surface-50:  var(--p-zinc-900);
+  --p-surface-100: var(--p-zinc-800);
+  --p-surface-200: var(--p-zinc-700);
+  --p-surface-300: var(--p-zinc-600);
+  --p-surface-400: var(--p-zinc-500);
+  --p-surface-500: var(--p-zinc-400);
+  --p-surface-600: var(--p-zinc-300);
+  --p-surface-700: var(--p-zinc-200);
+  --p-surface-800: var(--p-zinc-100);
+  --p-surface-900: var(--p-zinc-50);
+  --p-surface-950: var(--p-zinc-0);
+
+  --p-text-color:           rgba(255,255,255,.87);
+  --p-text-hover-color:     rgba(255,255,255,.95);
+  --p-text-muted-color:     rgba(255,255,255,.6);
+  --p-text-muted-hover-color: rgba(255,255,255,.75);
+
+  --p-content-background:       #18181b;
+  --p-content-hover-background: #27272a;
+  --p-content-border-color:     #3f3f46;
+
+  --p-highlight-background:       rgba(16,185,129,.16);
+  --p-highlight-focus-background: rgba(16,185,129,.24);
+  --p-highlight-color:            rgba(255,255,255,.87);
+  --p-highlight-focus-color:      rgba(255,255,255,.87);
+
+  --p-form-field-background:          #18181b;
+  --p-form-field-disabled-background: #27272a;
+  --p-form-field-filled-background:   #27272a;
+  --p-form-field-border-color:        #3f3f46;
+  --p-form-field-hover-border-color:  #52525b;
+  --p-form-field-focus-border-color:  var(--p-primary-color);
+  --p-form-field-color:               rgba(255,255,255,.87);
+  --p-form-field-placeholder-color:   rgba(255,255,255,.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.p-light) {
+    color-scheme: dark;
+    --p-primary-color:          var(--p-primary-400);
+    --p-primary-contrast-color: var(--p-primary-950);
+    --p-primary-hover-color:    var(--p-primary-300);
+    --p-primary-active-color:   var(--p-primary-200);
+    --p-surface-0:   var(--p-zinc-950);
+    --p-surface-50:  var(--p-zinc-900);
+    --p-surface-100: var(--p-zinc-800);
+    --p-surface-200: var(--p-zinc-700);
+    --p-surface-300: var(--p-zinc-600);
+    --p-text-color:  rgba(255,255,255,.87);
+    --p-text-muted-color: rgba(255,255,255,.6);
+    --p-content-background: #18181b;
+    --p-content-hover-background: #27272a;
+    --p-content-border-color: #3f3f46;
+    --p-form-field-background: #18181b;
+    --p-form-field-border-color: #3f3f46;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   4. SHAPE / SPACING / RADIUS / SHADOW / MOTION
+   --------------------------------------------------------------------------- */
+:root {
+  /* Border radius — Aura uses 6px as the default content radius */
+  --p-border-radius-xs: 2px;
+  --p-border-radius-sm: 4px;
+  --p-border-radius-md: 6px;   /* DEFAULT */
+  --p-border-radius-lg: 8px;
+  --p-border-radius-xl: 12px;
+
+  /* Spacing scale (Aura form-field paddings) */
+  --p-space-xs: 0.25rem;   /* 4 */
+  --p-space-sm: 0.5rem;    /* 8 */
+  --p-space-md: 0.75rem;   /* 12 */
+  --p-space-lg: 1rem;      /* 16 */
+  --p-space-xl: 1.5rem;    /* 24 */
+  --p-space-2xl: 2rem;     /* 32 */
+  --p-space-3xl: 3rem;     /* 48 */
+
+  /* Form field sizing */
+  --p-form-field-padding-x: 0.75rem;
+  --p-form-field-padding-y: 0.5rem;
+  --p-form-field-sm-padding-x: 0.625rem;
+  --p-form-field-sm-padding-y: 0.375rem;
+  --p-form-field-lg-padding-x: 0.875rem;
+  --p-form-field-lg-padding-y: 0.625rem;
+
+  /* Elevation — Aura overlay shadow */
+  --p-shadow-none: none;
+  --p-shadow-sm:   0 1px 2px 0 rgba(0,0,0,0.05);
+  --p-shadow-md:   0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --p-shadow-lg:   0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --p-shadow-overlay: 0 12px 24px -6px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04);
+
+  /* Motion — Aura uses a snappy 0.2s default */
+  --p-transition-duration: 0.2s;
+  --p-transition-easing:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index layers */
+  --p-z-overlay: 1000;
+  --p-z-modal:   1100;
+  --p-z-tooltip: 1200;
+}
+
+/* ---------------------------------------------------------------------------
+   5. TYPOGRAPHY
+   PrimeNG showcase uses Inter as its display+body face. Mono = JetBrains Mono.
+   --------------------------------------------------------------------------- */
+:root {
+  --p-font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+  --p-font-mono:   "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+                   Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Type scale — geometric ratio ~1.25 */
+  --p-text-xs:   0.75rem;   /* 12 */
+  --p-text-sm:   0.875rem;  /* 14 */
+  --p-text-base: 1rem;      /* 16 */
+  --p-text-lg:   1.125rem;  /* 18 */
+  --p-text-xl:   1.25rem;   /* 20 */
+  --p-text-2xl:  1.5rem;    /* 24 */
+  --p-text-3xl:  1.875rem;  /* 30 */
+  --p-text-4xl:  2.25rem;   /* 36 */
+  --p-text-5xl:  3rem;      /* 48 */
+  --p-text-6xl:  3.75rem;   /* 60 — landing hero on showcase */
+
+  --p-font-weight-regular:  400;
+  --p-font-weight-medium:   500;
+  --p-font-weight-semibold: 600;
+  --p-font-weight-bold:     700;
+  --p-font-weight-extrabold:800;
+
+  --p-leading-tight:  1.2;
+  --p-leading-snug:   1.35;
+  --p-leading-normal: 1.5;
+  --p-leading-loose:  1.7;
+
+  --p-tracking-tight:  -0.02em;
+  --p-tracking-normal: 0;
+  --p-tracking-wide:   0.04em;
+}
+
+/* ---------------------------------------------------------------------------
+   6. SEMANTIC TYPE STYLES — apply directly to elements
+   --------------------------------------------------------------------------- */
+body, .p-body {
+  font-family: var(--p-font-family);
+  font-size: var(--p-text-base);
+  line-height: var(--p-leading-normal);
+  color: var(--p-text-color);
+  background: var(--p-content-background);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.p-h1, .p-display {
+  font-size: var(--p-text-5xl);
+  font-weight: var(--p-font-weight-extrabold);
+  line-height: var(--p-leading-tight);
+  letter-spacing: var(--p-tracking-tight);
+  color: var(--p-surface-900);
+}
+.p-h2 {
+  font-size: var(--p-text-3xl);
+  font-weight: var(--p-font-weight-bold);
+  line-height: var(--p-leading-tight);
+  letter-spacing: var(--p-tracking-tight);
+  color: var(--p-surface-900);
+}
+.p-h3 {
+  font-size: var(--p-text-2xl);
+  font-weight: var(--p-font-weight-semibold);
+  line-height: var(--p-leading-snug);
+  color: var(--p-surface-900);
+}
+.p-h4 {
+  font-size: var(--p-text-xl);
+  font-weight: var(--p-font-weight-semibold);
+  line-height: var(--p-leading-snug);
+  color: var(--p-surface-900);
+}
+.p-h5 {
+  font-size: var(--p-text-lg);
+  font-weight: var(--p-font-weight-semibold);
+  line-height: var(--p-leading-snug);
+  color: var(--p-surface-900);
+}
+.p-eyebrow {
+  font-size: var(--p-text-xs);
+  font-weight: var(--p-font-weight-semibold);
+  letter-spacing: var(--p-tracking-wide);
+  text-transform: uppercase;
+  color: var(--p-primary-color);
+}
+.p-lead {
+  font-size: var(--p-text-lg);
+  line-height: var(--p-leading-loose);
+  color: var(--p-text-muted-color);
+}
+.p-body-text { font-size: var(--p-text-base); line-height: var(--p-leading-normal); color: var(--p-text-color); }
+.p-small     { font-size: var(--p-text-sm);   color: var(--p-text-muted-color); }
+.p-code, code, kbd, samp {
+  font-family: var(--p-font-mono);
+  font-size: 0.92em;
+  background: var(--p-surface-100);
+  padding: 0.1em 0.35em;
+  border-radius: var(--p-border-radius-sm);
+  color: var(--p-surface-800);
+}
+:root.p-dark .p-code,
+:root.p-dark code { background: var(--p-surface-100); color: var(--p-text-color); }
